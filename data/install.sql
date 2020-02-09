@@ -23,7 +23,7 @@ INSERT INTO `core_form_button` (`Button_ID`, `label`, `icon`, `title`, `href`, `
 CREATE TABLE `contact_request` (
   `Request_ID` int(11) NOT NULL,
   `contact_idfs` int(11) NOT NULL,
-  `comment` TEXT NOT NULL DEFAULT '',
+  `message` TEXT NOT NULL DEFAULT '',
   `created_by` int(11) NOT NULL,
   `created_date` datetime NOT NULL,
   `modified_by` int(11) NOT NULL,
@@ -52,7 +52,7 @@ INSERT INTO `core_form_tab` (`Tab_ID`, `form`, `title`, `subtitle`, `icon`, `cou
 -- add address fields
 --
 INSERT INTO `core_form_field` (`Field_ID`, `type`, `label`, `fieldkey`, `tab`, `form`, `class`, `url_view`, `url_list`, `show_widget_left`, `allow_clear`, `readonly`, `tbl_cached_name`, `tbl_class`, `tbl_permission`) VALUES
-(NULL, 'text', 'Comment', 'comment', 'request-base', 'contactrequest-single', 'col-md-6', '', '', '0', '1', '0', '', '', ''),
+(NULL, 'text', 'Message', 'message', 'request-base', 'contactrequest-single', 'col-md-6', '', '', '0', '1', '0', '', '', ''),
 (NULL, 'hidden', 'Contact', 'contact_idfs', 'request-base', 'contactrequest-single', 'col-md-3', '', '/', '0', '1', '0', '', '', '');
 
 --
