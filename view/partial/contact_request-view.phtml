@@ -1,0 +1,27 @@
+<?php
+# Only show partial if data is set
+if(array_key_exists('contact_request',$this->aPartialData)) {
+    # add address form fields
+    $aHistories = $this->aPartialData['contact_request']['oHistories'];
+    $aFields = $this->aPartialData['contact_request']['aFormFields'];
+
+    if(count($aHistories) == 0) { ?>
+        <div class="alert alert-info px-2 py-2">
+            <?=$this->translate('No Request yet')?>
+        </div>
+    <?php } else { ?>
+        <ul class="list-group">
+        <?php
+        foreach($aHistories as $oHist) { ?>
+            <li class="list-group-item">
+                <div class="row">
+                    <?= $this->partial('partial/viewformfields', ['sFormName' => 'contactrequest-single', 'sTab' => 'request-base', 'oItem' => $oHist, 'aFormFieldsByTab' => $aFields]); ?>
+                </div>
+            </li>
+        <?php
+        }
+        ?>
+        </ul>
+    <?php
+    }
+}

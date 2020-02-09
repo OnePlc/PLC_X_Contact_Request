@@ -1,0 +1,53 @@
+{
+  "name": "oneplace/oneplace-contact-request",
+  "description": "onePlace Contact Request Plugin. Manage your Contact's request",
+  "type": "oneplace-plugin",
+  "version": "1.0.0",
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "laminas",
+    "mvc",
+    "oneplace-module",
+    "oneplace",
+    "contact-request",
+    "framework"
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "^8",
+    "laminas/laminas-test": "^3.3.0",
+    "php-coveralls/php-coveralls": "^2.2"
+  },
+  "require": {
+    "php": "^7.1",
+    "oneplace/oneplace-contact": "^1.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "OnePlace\\Contact\\Request\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+
+    }
+  },
+  "scripts": {
+    "cs-check": "phpcs",
+    "cs-fix": "phpcbf",
+    "development-disable": "laminas-development-mode disable",
+    "development-enable": "laminas-development-mode enable",
+    "development-status": "laminas-development-mode status",
+    "post-create-project-cmd": [
+      "@development-enable",
+      "php -r '$file = file_get_contents(\".gitignore\"); $file = str_replace(\"composer.lock\", \"\", $file); file_put_contents(\".gitignore\", $file);'"
+    ],
+    "serve": "php -S 0.0.0.0:8080 -t public",
+    "test": "phpunit --colors=always",
+    "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
+  },
+  "extra": {
+    "zf": {
+      "module": "OnePlace\\Contact\\Request"
+    }
+  }
+}

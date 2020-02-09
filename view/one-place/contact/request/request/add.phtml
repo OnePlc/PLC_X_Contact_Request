@@ -1,0 +1,8 @@
+<?php
+$aPartialData = ['sFormName'=>$sFormName,'iRefIDFS'=>$iContactID];
+if(isset($aPartialExtraData)) {
+    $aPartialData['aPartialExtraData'] = $aPartialExtraData;
+}
+?>
+<?= $this->partial('partial/formheader',['sTitle'=>'Add new Request']) ?>
+<?= $this->partial('partial/basicform', $aPartialData); ?>
