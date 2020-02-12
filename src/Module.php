@@ -32,7 +32,7 @@ class Module {
      *
      * @since 1.0.0
      */
-    const VERSION = '1.0.0';
+    const VERSION = '1.0.1';
 
     /**
      * Load module config file
@@ -76,7 +76,7 @@ class Module {
                 },
             ],
         ];
-    }
+    } # getServiceConfig()
 
     /**
      * Load Controllers
@@ -84,7 +84,6 @@ class Module {
     public function getControllerConfig() : array {
         return [
             'factories' => [
-                # Plugin Example Controller
                 Controller\RequestController::class => function($container) {
                     $oDbAdapter = $container->get(AdapterInterface::class);
                     $tableGateway = $container->get(RequestTable::class);
@@ -97,7 +96,16 @@ class Module {
                         $container
                     );
                 },
+                # Installer
+                Controller\InstallController::class => function($container) {
+                    $oDbAdapter = $container->get(AdapterInterface::class);
+                    return new Controller\InstallController(
+                        $oDbAdapter,
+                        $container->get(Model\RequestTable::class),
+                        $container
+                    );
+                },
             ],
         ];
-    }
+    } # getControllerConfig()
 }

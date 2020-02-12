@@ -20,7 +20,7 @@ use Laminas\Router\Http\Segment;
 use Laminas\ServiceManager\Factory\InvokableFactory;
 
 return [
-    # Contact Module - Routes
+    # Request Module - Routes
     'router' => [
         'routes' => [
             'contact-request' => [
@@ -37,8 +37,18 @@ return [
                     ],
                 ],
             ],
+            'contact-request-setup' => [
+                'type'    => Literal::class,
+                'options' => [
+                    'route'    => '/contact/request/setup',
+                    'defaults' => [
+                        'controller' => Controller\InstallController::class,
+                        'action'     => 'checkdb',
+                    ],
+                ],
+            ],
         ],
-    ],
+    ], # Routes
 
     # View Settings
     'view_manager' => [

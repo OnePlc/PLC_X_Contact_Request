@@ -2,7 +2,7 @@
 /**
  * RequestTable.php - Request Table
  *
- * Table Model for Contact Request
+ * Table Model for Request Request
  *
  * @category Model
  * @package Contact\Request
@@ -40,7 +40,7 @@ class RequestTable extends CoreEntityTable {
     }
 
     /**
-     * Get Contact Entity
+     * Get Request Entity
      *
      * @param int $id
      * @return mixed
@@ -52,18 +52,18 @@ class RequestTable extends CoreEntityTable {
     }
 
     /**
-     * Save Contact Entity
+     * Save Request Entity
      *
-     * @param Contact $oContact
-     * @return int Contact ID
+     * @param Request $oRequest
+     * @return int Request ID
      * @since 1.0.0
      */
-    public function saveSingle(Request $oContact) {
+    public function saveSingle(Request $oRequest) {
         $aData = [];
 
-        $aData = $this->attachDynamicFields($aData,$oContact);
+        $aData = $this->attachDynamicFields($aData,$oRequest);
 
-        $id = (int) $oContact->id;
+        $id = (int) $oRequest->id;
 
         if ($id === 0) {
             # Add Metadata
@@ -72,14 +72,14 @@ class RequestTable extends CoreEntityTable {
             $aData['modified_by'] = CoreController::$oSession->oUser->getID();
             $aData['modified_date'] = date('Y-m-d H:i:s',time());
 
-            # Insert Contact
+            # Insert Request
             $this->oTableGateway->insert($aData);
 
             # Return ID
             return $this->oTableGateway->lastInsertValue;
         }
 
-        # Check if Contact Entity already exists
+        # Check if Request Entity already exists
         try {
             $this->getSingle($id);
         } catch (\RuntimeException $e) {
@@ -93,7 +93,7 @@ class RequestTable extends CoreEntityTable {
         $aData['modified_by'] = CoreController::$oSession->oUser->getID();
         $aData['modified_date'] = date('Y-m-d H:i:s',time());
 
-        # Update Contact
+        # Update Request
         $this->oTableGateway->update($aData, ['Request_ID' => $id]);
 
         return $id;
@@ -102,7 +102,7 @@ class RequestTable extends CoreEntityTable {
     /**
      * Generate new single Entity
      *
-     * @return Contact
+     * @return Request
      * @since 1.0.0
      */
     public function generateNew() {

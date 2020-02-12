@@ -2,7 +2,7 @@
 /**
  * Request.php - Request Entity
  *
- * Entity Model for Contact Request
+ * Entity Model for Request Request
  *
  * @category Model
  * @package Contact\Request
@@ -19,7 +19,7 @@ use Application\Model\CoreEntityModel;
 
 class Request extends CoreEntityModel {
     /**
-     * Contact constructor.
+     * Request constructor.
      *
      * @param AdapterInterface $oDbAdapter
      * @since 1.0.0
