@@ -2,7 +2,7 @@
   "name": "oneplace/oneplace-contact-request",
   "description": "onePlace Contact Request Plugin. Manage your Contact's request",
   "type": "oneplace-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "BSD-3-Clause",
   "keywords": [
     "laminas",
@@ -19,7 +19,8 @@
   },
   "require": {
     "php": "^7.1",
-    "oneplace/oneplace-contact": "^1.0.0"
+    "oneplace/oneplace-contact": "^1.0.0",
+    "ext-json": "*"
   },
   "autoload": {
     "psr-4": {

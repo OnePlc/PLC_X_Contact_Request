@@ -22,6 +22,7 @@ INSERT INTO `core_form_button` (`Button_ID`, `label`, `icon`, `title`, `href`, `
 --
 CREATE TABLE `contact_request` (
   `Request_ID` int(11) NOT NULL,
+  `label` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `contact_idfs` int(11) NOT NULL,
   `message` TEXT NOT NULL DEFAULT '',
   `created_by` int(11) NOT NULL,

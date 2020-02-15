@@ -47,6 +47,20 @@ return [
                     ],
                 ],
             ],
+            'contact-request-api' => [
+                'type'    => Segment::class,
+                'options' => [
+                    'route' => '/contact/request/api[/:action[/:id]]',
+                    'constraints' => [
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ],
+                    'defaults' => [
+                        'controller' => Controller\ApiController::class,
+                        'action'     => 'index',
+                    ],
+                ],
+            ],
         ],
     ], # Routes
 

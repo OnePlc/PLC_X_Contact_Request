@@ -42,11 +42,12 @@ class Request extends CoreEntityModel {
      */
     public function exchangeArray(array $aData) {
         $this->id = !empty($aData['Request_ID']) ? $aData['Request_ID'] : 0;
+        $this->label = !empty($aData['label']) ? $aData['label'] : '';
 
         $this->updateDynamicFields($aData);
     }
 
     public function getLabel() {
-        return $this->street;
+        return $this->label;
     }
 }
