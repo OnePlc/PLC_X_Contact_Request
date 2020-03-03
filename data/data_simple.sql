@@ -19,3 +19,7 @@ INSERT INTO `permission` (`permission_key`, `module`, `label`, `nav_label`, `nav
 ('add', 'OnePlace\\Contact\\Request\\\\Controller\\StateController', 'Add Request', '', '', 0),
 ('list', 'OnePlace\\Contact\\Request\\Controller\\ApiController', 'List', '', '', 1);
 
+--
+-- quicksearch fix
+--
+INSERT INTO `settings` (`settings_key`, `settings_value`) VALUES ('quicksearch-contactrequest-customlabel', 'message');
