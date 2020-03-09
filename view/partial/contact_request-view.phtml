@@ -7,7 +7,7 @@ if(array_key_exists('contact_request',$this->aPartialData)) {
 
     if(count($aHistories) == 0) { ?>
         <div class="alert alert-info px-2 py-2">
-            <?=$this->translate('No Request yet')?>
+            <?=$this->translate('No Requests yet')?>
         </div>
     <?php } else { ?>
         <ul class="list-group">
@@ -24,4 +24,10 @@ if(array_key_exists('contact_request',$this->aPartialData)) {
         </ul>
     <?php
     }
+}else { ?>
+    <div class="alert alert-danger px-2 py-2">
+        <?= $this->translate('Could not load request data') ?>
+    </div>
+    <?php
 }
+

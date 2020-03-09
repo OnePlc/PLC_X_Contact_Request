@@ -2,20 +2,13 @@
 -- Add new tab
 --
 INSERT INTO `core_form_tab` (`Tab_ID`, `form`, `title`, `subtitle`, `icon`, `counter`, `sort_id`, `filter_check`, `filter_value`) VALUES
-('contact-request', 'contact-single', 'Request', 'Recent Contact', 'fas fa-request', '', '1', '', '');
+('contact-request', 'contact-single', 'Requests', 'Recent Requests', 'fas fa-envelope', '', '1', '', '');
 
 --
 -- Add new partial
 --
 INSERT INTO `core_form_field` (`Field_ID`, `type`, `label`, `fieldkey`, `tab`, `form`, `class`, `url_view`, `url_list`, `show_widget_left`, `allow_clear`, `readonly`, `tbl_cached_name`, `tbl_class`, `tbl_permission`) VALUES
-(NULL, 'partial', 'Request', 'contact_request', 'contact-request', 'contact-single', 'col-md-12', '', '', '0', '1', '0', '', '', '');
-
---
--- add button
---
-INSERT INTO `core_form_button` (`Button_ID`, `label`, `icon`, `title`, `href`, `class`, `append`, `form`, `mode`, `filter_check`, `filter_value`) VALUES
-(NULL, 'Add Request', 'fas fa-request', 'Add Request', '/contact/request/add/##ID##', 'primary', '', 'contact-view', 'link', '', ''),
-(NULL, 'Save Request', 'fas fa-save', 'Save Request', '#', 'primary saveForm', '', 'contactrequest-single', 'link', '', '');
+(NULL, 'partial', 'Requests', 'contact_request', 'contact-request', 'contact-single', 'col-md-12', '', '', '0', '1', '0', '', '', '');
 
 --
 -- create request table
@@ -41,13 +34,13 @@ ALTER TABLE `contact_request`
 -- add request form
 --
 INSERT INTO `core_form` (`form_key`, `label`, `entity_class`, `entity_tbl_class`) VALUES
-('contactrequest-single', 'Contact Request', 'OnePlace\\Contact\\Request\\Model\\Request', 'OnePlace\\Contact\\Request\\Model\\RequestTable');
+('contactrequest-single', 'Contact Requests', 'OnePlace\\Contact\\Request\\Model\\Request', 'OnePlace\\Contact\\Request\\Model\\RequestTable');
 
 --
 -- add form tab
 --
 INSERT INTO `core_form_tab` (`Tab_ID`, `form`, `title`, `subtitle`, `icon`, `counter`, `sort_id`, `filter_check`, `filter_value`) VALUES
-('request-base', 'contactrequest-single', 'Request', 'Recent Contact', 'fas fa-request', '', '1', '', '');
+('request-base', 'contactrequest-single', 'Requests', 'Recent Requests', 'fas fa-envelope', '', '1', '', '');
 
 --
 -- add address fields
